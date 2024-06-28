@@ -6,18 +6,18 @@ Setting is input from a namelist by standard-input.
 ## Namelist
 3 namelists need to be setted in one file.
 ### grid
-- nx
+- nx  
 Number of grids in x direction
-- ny
+- ny  
 Number of grids in y direction
-- nz
+- nz  
 Number of grids in z direction
 ### record
-- nt
+- nt  
 Total number of records (i.e. number of time steps)
 ### files
-- ifile
+- ifile  
 Input file name
-- ofile
+- ofile  
 Output file name
 
