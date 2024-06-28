@@ -7,11 +7,12 @@
 
 ulimit -s unlimited
 
+VAR=SWHR
 NOW=$(date "+%Y%m%d_%H%M%S")
 RESULT_FILE="../output/result_${NOW}.txt"
 
 cd /mnt/jet11/kosei/mim/energetics/hourly_clim/src
 
-./EXE >& ${RESULT_FILE}
+./unit_conv < ../nml/input_${VAR}.nml >& ${RESULT_FILE}
 
 
