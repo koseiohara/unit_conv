@@ -1,0 +1,15 @@
+&grid
+    nx = 288
+    ny = 145
+    nz = 37
+&end
+
+&record
+    nt = 1464
+&end
+
+&files
+    ifile = '/mnt/jet11/kosei/DIAS/JRA55/JRA55_2000_2000/JRA55_2000_2000_ALL_LRGHR.bin'
+    ofile = '../output/JRA55_2000_2000_ALL_LRGHR.bin'
+&end
+

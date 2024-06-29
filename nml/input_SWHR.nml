@@ -1,7 +1,7 @@
 &grid
     nx = 288
     ny = 145
-    nz = 45
+    nz = 37
 &end
 
 &record
@@ -10,6 +10,6 @@
 
 &files
     ifile = '/mnt/jet11/kosei/DIAS/JRA55/JRA55_2000_2000/JRA55_2000_2000_ALL_SWHR.bin'
-    ofile = '../outputJRA55_2000_2000_ALL_SWHR.bin'
+    ofile = '../output/JRA55_2000_2000_ALL_SWHR.bin'
 &end
 
