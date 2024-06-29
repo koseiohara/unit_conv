@@ -26,7 +26,7 @@ module change_unit
                  & recstep=1         )  !! IN
 
         call fopen(otype           , &  !! OUT
-                 & fname=ifile     , &  !! IN
+                 & fname=ofile     , &  !! IN
                  & action='write'  , &  !! IN
                  & recl=kp*nx*ny*nz, &  !! IN
                  & record=1        , &  !! IN
@@ -36,10 +36,12 @@ module change_unit
             call fread(itype              , &  !! INOUT
                      & array(1:nx,1:ny,1:nz))  !! OUT
 
-            call perDay2perSec(array(1:nz,1:ny,1:nz))  !! INOUT
+            call perDay2perSec(array(1:nx,1:ny,1:nz))  !! INOUT
 
             call fwrite(otype              , &  !! INOUT
                       & array(1:nx,1:ny,1:nz))  !! IN
+
+            write(*,'(a,i6.0,a)') 't = ', t, '    ... COMPLETE'
         enddo
 
         call fclose(itype)  !! INOUT
@@ -51,7 +53,7 @@ module change_unit
     subroutine perDay2perSec(array)
         real(kp), intent(inout) :: array(nx,ny,nz)
 
-        real(kp), parameter :: sec_per_day = 60._kp * 60._kp * 24._kp
+        real(kp), parameter :: sec_per_day = 1._kp / (60._kp * 60._kp * 24._kp)
 
         array(1:nx,1:ny,1:nz) = array(1:nx,1:ny,1:nz) * sec_per_day
 

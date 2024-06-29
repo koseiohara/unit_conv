@@ -30,6 +30,16 @@ module namelist
         read(nml_unit,nml=record)
         read(nml_unit,nml=files)
 
+        write(*,'(a,i0)') 'nx = ', nx
+        write(*,'(a,i0)') 'ny = ', ny
+        write(*,'(a,i0)') 'nz = ', nz
+
+        write(*,'(a,i0)') 'nt = ', nt
+
+        write(*,'(a)')    'ifile : ' // trim(ifile)
+        write(*,'(a)')    'ofile : ' // trim(ofile)
+        write(*,*)
+
         call checker()
 
     end subroutine read_nml

@@ -7,12 +7,15 @@
 
 ulimit -s unlimited
 
-VAR=SWHR
+VAR=LRGHR
 NOW=$(date "+%Y%m%d_%H%M%S")
-RESULT_FILE="../output/result_${NOW}.txt"
+RESULT="../output/result_${VAR}_${NOW}.txt"
+NML="../nml/input_${VAR}.nml"
 
-cd /mnt/jet11/kosei/mim/energetics/hourly_clim/src
+cd /mnt/jet11/kosei/Fortran/unit_conv/src
 
-./unit_conv < ../nml/input_${VAR}.nml >& ${RESULT_FILE}
+./unit_conv < ${NML} >& ${RESULT}
 
+cat "" >> ${RESULT}
+cat ${NML} >> ${RESULT}
 
